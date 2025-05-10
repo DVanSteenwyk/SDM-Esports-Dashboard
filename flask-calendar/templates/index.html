@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{{ url_for('add_event') }}" class="btn btn-primary mb-3">Add New Event</a>
+
+<div id='calendar'></div>
+
+<hr>
+<h3>Event List</h3>
+<ul class="list-group">
+  {% for event in events %}
+    <li class="list-group-item">
+      <strong>{{ event.title }}</strong><br>
+      📅 {{ event.date }}<br>
+      📝 {{ event.description }}
+    </li>
+  {% else %}
+    <li class="list-group-item">No events yet.</li>
+  {% endfor %}
+</ul>
+
+<!-- FullCalendar Scripts -->
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: {{ events | tojson | safe }},
+    });
+    calendar.render();
+  });
+</script>
+
+<style>
+  #calendar {
+    max-width: 900px;
+    margin: 0 auto 40px;
+  }
+</style>
+{% endblock %}
