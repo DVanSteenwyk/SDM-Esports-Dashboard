@@ -9,26 +9,27 @@
 <h3>Event List</h3>
 <ul class="list-group">
   {% for event in events %}
-    <li class="list-group-item">
+    <li class="list-group-item" style="background-color: {{ event.color }};">
       <strong>{{ event.title }}</strong><br>
-      📅 {{ event.date }}<br>
-      📝 {{ event.description }}
+      📅 {{ event.date.strftime('%Y-%m-%d') }}<br>
+      📝 {{ event.description }}<br>
+      <a href="{{ url_for('edit_event', event_id=event.id) }}" class="btn btn-sm btn-outline-primary mt-2">Edit</a>
+      <a href="{{ url_for('delete_event', event_id=event.id) }}" class="btn btn-sm btn-outline-danger mt-2">Delete</a>
     </li>
   {% else %}
     <li class="list-group-item">No events yet.</li>
   {% endfor %}
 </ul>
 
-<!-- FullCalendar Scripts -->
 <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const calendarEl = document.getElementById('calendar');
     const calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      events: {{ events | tojson | safe }},
+      events: {{ events_json | tojson | safe }}
     });
     calendar.render();
   });

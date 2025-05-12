@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Event</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" value="{{ event.title }}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Date</label>
+    <input type="date" class="form-control" name="date" value="{{ event.date.strftime('%Y-%m-%d') }}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" name="description" rows="3">{{ event.description }}</textarea>
+  </div>
+  {% if event.series_id %}
+  <div class="mb-3">
+    <label class="form-label">Apply Changes To:</label><br>
+    <input type="radio" name="scope" value="single" checked> Only this event<br>
+    <input type="radio" name="scope" value="all"> All in series
+  </div>
+  {% endif %}
+  <button type="submit" class="btn btn-success">Save Changes</button>
+</form>
+{% endblock %}
