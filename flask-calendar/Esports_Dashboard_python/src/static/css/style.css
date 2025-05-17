@@ -1,0 +1,132 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center; 
+  position: relative; 
+  overflow: visible; 
+
+  /* Can edit */
+  background-color: #333;
+  padding: 0 16px;
+  padding-top: 0;
+  height: 70px;
+}
+
+/* Navbar brand/logo */
+.navbar .navbar-brand {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: auto; /* push other items to the right */
+  user-select: none;
+}
+
+/* Navbar links container */
+.navbar-nav {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Each nav item */
+.nav-item {
+  position: relative; /* for dropdown */
+}
+
+/* Dropdown button (link that toggles dropdown) */
+.nav-link, .dropbtn {
+  color: white;
+  text-decoration: none;
+  padding: 14px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Hover styles */
+.nav-link:hover, .dropbtn:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Dropdown menu container */
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%; /* right below the nav item */
+  left: 0;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown items */
+.dropdown-header {
+  margin-left: 0.0001rem;
+  font-weight: bold;
+}
+
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* Dropdown item hover */
+.dropdown-menu a:hover {
+  background-color: #eee;
+}
+
+/* Optional: Fix text selection while dragging */
+.dropdown-menu a, .nav-link, .dropbtn {
+  user-select: none;
+}
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

@@ -1,0 +1,34 @@
+Traffic - No account (Or anyone not logged in)
+- Home
+- About
+- Public Calendar Viewing
+- News
+- Teams info 
+
+Guests - Logged in
+- Same as prior
+- Subscriptions
+- ???
+
+-------
+
+Members (non-verified) - Logged in
+- Same as prior
+- Info on how to join the club
+
+Members (verified) - Logged in
+- Same as prior
+- Info on club meeting times
+- Voting privellages
+- Forms privellages
+
+--------
+
+Admins - Logged in
+- Same as prior
+...
+
+
+To access db:
+- bash > sqlite3 Esports_Dashboard_python/instance/esports_dashboard.db > SELECT * FROM user;
+- Can change folder name "Esports_Dashboard_python" and can change "esports_dashboard.db" in __init__.py
