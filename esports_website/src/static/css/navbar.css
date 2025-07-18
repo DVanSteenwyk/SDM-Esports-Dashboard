@@ -1,0 +1,30 @@
+/* src/static/css/animations.css */
+
+
+.navbar-container {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    --tw-border-opacity: 1;
+    border-color: rgb(179 164 110 / var(--tw-border-opacity, 1));
+}
+
+.navbar-brand {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px white);
+}
+
+.navbar-links {
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.platform-links {
+    transition: all .3s ease;
+}
+
+.navbar-icon {
+    width: 36px;
+    object-fit: cover;
+}

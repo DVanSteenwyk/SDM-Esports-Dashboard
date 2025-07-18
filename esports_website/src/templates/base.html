@@ -1,0 +1,155 @@
+<!-- src/tamplates/base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Header -->
+    <head>
+        <title>
+            {% block title %}
+            South Dakota Mines Esports Association Website
+            {% endblock %}
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css imports -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/positioning.css') }}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/colors.css') }}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+         <!-- page spec imports -->
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+         <!-- media import -->
+         <link rel="stylesheet" href="{{ url_for('static', filename='css/media.css') }}">
+
+        <!-- init js import-->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+        {% block head %}{% endblock %}
+    </head>
+
+    <!-- Body -->
+    <body>
+
+        <!-- Navbar -->
+         <nav class="navbar-container z-50 a-0 block sticky bg-blue">
+            <div class="absolute a-0 bg-gold-500/10"></div> 
+            <div class="z-10 flex relative justify-space-between items-center py-8 px-0 lg:mx-48">
+                <a href="/" class="flex items-start">
+                    <img src="{{ url_for('static', filename='images/logo.svg')}}" class="navbar-brand block md:h-20 hover:contrast-200 hover:hue-rotate-15" alt="Hardrocker Esports Logo">
+                </a>
+                <div class="z-10 flex relative items-center justify-center space-x-32">
+                    <ul class="flex justify-center mb-0 md:space-x-32">
+                        <li class="flex items-center relative">
+                            <a href="/" target class="navbar-links block relative py-8 px-12 md:p-0 text-gold-1000 hover:text-white {% if current_page == 'home' %}text-white-1000 active-link{% endif %}">
+                                HOME
+                            </a>
+                        </li>
+                        <li class="flex items-center relative">
+                            <a href="/about" target class="navbar-links block relative py-8 px-12 md:p-0 text-gold-1000 hover:text-white {% if current_page == 'about' %}text-white-1000 active-link{% endif %}">
+                                ABOUT
+                            </a>
+                        </li>
+                        <li class="flex items-center relative">
+                            <a href="/teams" target class="navbar-links block relative py-8 px-12 md:p-0 text-gold-1000 hover:text-white {% if current_page == 'teams' %}text-white-1000 active-link{% endif %}">
+                                TEAMS
+                            </a>
+                        </li>
+                        <li class="flex items-center relative">
+                            <a href="/schedule" target class="navbar-links block relative py-8 px-12 md:p-0 text-gold-1000 hover:text-white {% if current_page == 'schedule' %}text-white-1000 active-link{% endif %}">
+                                SCHEDULE
+                            </a>
+                        </li>
+                        <li class="flex items-center relative">
+                            <a href="/contact_us" target class="navbar-links block relative py-8 px-12 md:p-0 text-gold-1000 hover:text-white {% if current_page == 'contact' %}text-white-1000 active-link{% endif %}">
+                                CONTACT
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="flex items-center space-x-0 ml-24 border-gold-l-2-500/30 pl-24">
+                        <a href="https://discord.gg/uru6RTUmbR" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Discord" title="Discord">
+                            <img class="flex block navbar-icon" src="{{ url_for('static', filename='images/socials/discord.svg')}}"></img>
+                        </a>
+                        <a href="https://www.twitch.tv/hardrocker_esports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Twitch" title="Twitch">
+                            <img class="flex block navbar-icon" src="{{ url_for('static', filename='images/socials/twitch.svg')}}"></img>
+                        </a>
+                        <a href="https://www.youtube.com/@hardrocker_esports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="YouTube" title="YouTube">
+                            <img class="flex block navbar-icon" src="{{ url_for('static', filename='images/socials/youtube.svg')}}"></img>
+                        </a>
+                        <a href="https://www.instagram.com/hardrocker_esports/" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Instagram" title="Instagram">
+                            <img class="flex block navbar-icon" src="{{ url_for('static', filename='images/socials/instagram.svg')}}"></img>
+                        </a>
+                        <a href="https://www.facebook.com/HardrockerEsports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Facebook" title="Facebook">
+                            <img class="flex block navbar-icon" src="{{ url_for('static', filename='images/socials/facebook.svg')}}"></img>
+                        </a>
+                        <a href="https://x.com/SDMines_Esports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="X" title="X">
+                            <img class="flex block navbar-icon" src="{{ url_for('static', filename='images/socials/x.svg')}}"></img>
+                        </a>
+                    </div>
+                </div>
+                <p class="hidden md:block text-gold-1000 mr-6 relative z-10 mb-0">#ROCKING HARD OR HARDLY ROCKING</p>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+         {% block content %}{% endblock %}
+
+        <!-- Footer -->
+         <footer class="flex flex-col md:flex-row justify-space-between p-40 bg-blue border-gold-t-4-500 relative">
+            <div class="container">
+                <div class="h-full items-center flex flex-col md:flex-row space-y-16 md:space-y-0 md:space-x-24 mb-16 md:mb-0">
+                    <a href="/sponsors" class="footer-link text-white-1000 relative">SPONSORS</a>
+                    <a href="/about" class="footer-link text-white-1000 relative">ABOUT US</a>
+                    <a href="/contact_us" class="footer-link text-white-1000 relative">CONTACT US</a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center space-y-16" style="max-width: 340px;">
+                <div class="flex items-center">
+                    <a href="https://discord.gg/uru6RTUmbR" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Discord" title="Discord">
+                            <img class="flex block footer-icon" src="{{ url_for('static', filename='images/socials/discord.svg')}}"></img>
+                        </a>
+                        <a href="https://www.twitch.tv/hardrocker_esports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Twitch" title="Twitch">
+                            <img class="flex block footer-icon" src="{{ url_for('static', filename='images/socials/twitch.svg')}}"></img>
+                        </a>
+                        <a href="https://www.youtube.com/@hardrocker_esports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="YouTube" title="YouTube">
+                            <img class="flex block footer-icon" src="{{ url_for('static', filename='images/socials/youtube.svg')}}"></img>
+                        </a>
+                        <a href="https://www.instagram.com/hardrocker_esports/" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Instagram" title="Instagram">
+                            <img class="flex block footer-icon" src="{{ url_for('static', filename='images/socials/instagram.svg')}}"></img>
+                        </a>
+                        <a href="https://www.facebook.com/HardrockerEsports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="Facebook" title="Facebook">
+                            <img class="flex block footer-icon" src="{{ url_for('static', filename='images/socials/facebook.svg')}}"></img>
+                        </a>
+                        <a href="https://x.com/SDMines_Esports" target="_blank" rel="noopener no referrer" class="platform-links relative p-8"
+                        aria-label="X" title="X">
+                            <img class="flex block footer-icon" src="{{ url_for('static', filename='images/socials/x.svg')}}"></img>
+                        </a>
+                </div>
+                <div class="text-center text-white-1000">
+                    <div style="font-size: 4.25rem !important;">
+                        © 2025 All rights reserved by the South Dakota Mines Esports Association
+                    </div>
+                </div>
+            </div>
+         </footer>
+
+        {% block script %}
+        <!-- js imports -->
+        {% endblock %}
+
+    </body>
+</html>

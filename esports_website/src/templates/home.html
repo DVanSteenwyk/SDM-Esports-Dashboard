@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Esports Website{% endblock %}
+
+{% block content %}
+
+<main class="overflow-hidden min-h-screen bg-gradient-to-l from-[#045ac0] via-[#041540] to-black">
+    <div>
+        <section class="min-h-screen relative overflow-hidden perspective-1000">
+            <div class="grid-background absolute grid a-0">
+                {% for y in range(10) %}
+                    {% for x in range(10) %}
+                        {% set delay = (x + y) * 0.075 %}
+                        <div class="grid-square relative" style="--delay: {{ delay }}s; --x: {{ x }}; --y: {{ y }};">
+                            <div class="grid-square-inner absolute a-0"></div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="cyber-lines absolute a-0"></div>
+            <div class="relative z-10 flex items-center justify-center min-h-screen py-80 md:py-0">
+                <div class="container mx-auto md:px-24">
+                    <div class="relative">
+                        <div class="absolute h-1000 md:h-2000 -top-50 md:-t-500 -l-430 md:-left-800 
+                                    w-1400 md:w-2000 text-center opacity-20 select-none pointer-events-none floating-element">
+                            <img src="{{ url_for('static', filename='images/logo.svg')}}" alt="Hardrocker Esports Logo" class="w-full max-w-[60vw] md:max-w-[90vw] mx-auto">
+                        </div>
+                        <div class="grid lg:grid-cols-12 md:gap-32 items-center relative">
+                            <div class="lg:col-span-7 space-y-16 md:space-y-32 relative md:px-0">
+                                <div class="absolute -t-16 -l-16 w-32 md:w-80 h-32 md:h-80 border-gold-t-l-2-500"></div>
+                                <div class="absolute -b-16 -r-16 w-32 md:w-80 h-32 md:h-80 border-gold-b-r-2-500"></div>
+                                <h1 class="hero-text px-16 md:px-40 relative">
+                                    <span class="block mb-8">
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">H</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">A</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">R</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">D</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">R</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">O</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">C</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">K</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">E</span>
+                                        </span>
+                                        <span class="inline-block relative cursor-default">
+                                            <span class="letter block sm:text-5x1 md:text-7x1 lg:text-9x1 to-white/70 via-white/90 from-white bg-gradient-to-br">R</span>
+                                        </span>
+                                    </span>
+                                    <span class="block name-card sm:text-lg md:text-x1 lg:text-2x1 from-blue to-gold-200 bg-gradient-to-r">HARDROCKER ESPORTS</span>
+                                </h1>
+                                <p class="desc sm:text-lg md:text-x1 lg:text-2x1 text-white/70 px-16 md:px-40 mr-16 md:mr-80">
+                                    Welcome to Hardrocker Esports! Home of the Rowdiest Rockers providing the most entertaining and competitive Esports content!
+                                </p>
+                                <div class="flex mr-16 md:mr-80 px-16 md:px-32 md:gap-24">
+                                    <a href="#team" class="cyber-button relative overflow-hidden py-12 px-24 w-full sm:w-auto text-center">
+                                        <span class="cyber-button-glitch absolute t-0 l-0"></span>
+                                        VIEW TEAMS
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-5 relative mt-24 lg:mt-0 md:mr-0 md:px-0">
+                                <div class="mt-16 md:mt-32 relative">
+                                    <div class="cyber-featured-card relative overflow-hidden md:h-400">
+                                        <div class="z-45 cyber-featuered-teams-tabs h-fifth w-full flex justify-around bg-blue border-gold-b-1-500">
+                                            <button class="cyber-teams-tab flex items-center justify-center actve" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/val_logo.svg')}}" alt="Valorant Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                            <button class="cyber-teams-tab flex items-center justify-center" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/lol_logo.svg')}}" alt="League of Legends Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                            <button class="cyber-teams-tab flex items-center justify-center" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/ssbu_logo.svg')}}" alt="Super Smash Bros. Ultimate Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                            <button class="cyber-teams-tab flex items-center justify-center" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/r6_logo.svg')}}" alt="Rainbow Six Siege Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                            <button class="cyber-teams-tab flex items-center justify-center" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/rl_logo.svg')}}" alt="Rocket League Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                            <button class="cyber-teams-tab flex items-center justify-center" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/ow2_logo.svg')}}" alt="Overwatch 2 Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                            <button class="cyber-teams-tab flex items-center justify-center" onclick="showTab(0)">
+                                                <img src="{{ url_for('static', filename='images/teams/apex_logo.svg')}}" alt="Apex Legends Logo" class="flex block cyber-team-logo">
+                                            </button>
+                                        </div>
+                                        <div class="micro-schedule flex grid w-full h-fourfifth bg-off-white">
+                                        <!-- ADD TBD logic here-->
+                                         {% for match in schedule %}
+                                            <div class="micro-schedule-square relative">
+                                                <div class="micro-schedule-square-inner w-full absolute p-8">
+                                                    <div class="text-center font-size-14 font-bold">
+                                                        Round {{ match['Round'] }}
+                                                    </div>
+                                                    <div class="flex items-center justify-space-between">
+                                                        <div class="record flex flex-col text-center">
+                                                            <span class="font-size-10 font-bold text-gray/50">1</span>
+                                                            <span class="font-size-8 font-bold">(0-0)</span>
+                                                        </div>
+                                                        <img src="{{ url_for('static', filename='images/logo.svg')}}" alt="Hardrocker Esports Logo" class="w-32">
+                                                        <span class="font-size-16 font-bold">0</span>
+                                                        <span class="font-size-16 font-bold">-</span>
+                                                        <span class="font-size-16 font-bold">0</span>
+                                                        <img src="{{ url_for('static', filename='images/logo.svg')}}" alt="Hardrocker Esports Logo" class="w-32">
+                                                        <div class="record flex flex-col text-center">
+                                                            <span class="font-size-10 font-bold text-gray/50">2</span>
+                                                            <span class="font-size-8 font-bold">(0-0)</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-full text-center font-size-12 pt-8">
+                                                        Friday, July 14 @ 19:00 MDT
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         {% endfor %}   
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-16 md:mt-32 relative">
+                                    <div class="cyber-featured-card relative overflow-hidden md:h-400">
+                                        <div class="cyber-featured-card-glitch">
+                                            <button class="absolute l-8 t-1/2 -translate-y-1/2 z-10 cyber-nav-button">⬅</button>
+                                            <button class="absolute r-8 t-1/2 -translate-y-1/2 z-10 cyber-nav-button">➡</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+<div class="bg-blue py-6 overflow-hidden border-y border-gold-300/30" style="height: 100px">
+
+</div>
+
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const squares = document.querySelectorAll(".grid-square");
+        squares.forEach(square => {
+            setTimeout(() => {
+                square.classList.add("filled");
+            }, 50);
+        });
+    });
+</script>
+{% endblock %}
