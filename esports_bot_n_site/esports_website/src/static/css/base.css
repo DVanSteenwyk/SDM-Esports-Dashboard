@@ -1,0 +1,170 @@
+/* src/static/css/base.css */
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 4px;
+}
+
+
+/* content */
+
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    background-color: transparent;
+}
+
+
+/* header */
+
+
+.head {
+    display: none;
+}
+
+
+/* display */
+
+
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}
+
+.grid {
+    display: grid;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+/* position */
+
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.sticky {
+    position: sticky;
+}
+
+
+/* alignment */
+
+
+.items-center {
+    align-items: center;
+}
+
+.items-start {
+    align-items: flex-start;
+}
+
+.items-left {
+    align-items: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-space-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+
+/* opacity */
+
+
+.opacity-20 {
+    opacity: 0.2;
+}
+
+
+/* overflow */
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+
+/* */
+
+
+.cursor-default {
+    cursor: default;
+}
+
+.select-none {
+    user-select: none;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+
+/* font */
+
+
+.font-size-20 {
+    font-size: 20px !important
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.font-size-14 {
+    font-size: 14px;
+}
+
+.font-size-12 {
+    font-size: 12px;
+}
+
+.font-size-10 {
+    font-size: 10px;
+}
+
+.font-size-8 {
+    font-size: 8px;
+}
+
+.font-bold {
+    font-weight: 900;
+}
+
+
+
+
+

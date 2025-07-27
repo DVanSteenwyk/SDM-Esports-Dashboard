@@ -1,0 +1,12 @@
+/* src/static/css/footer.css */
+
+
+.footer-link {
+    transition: all 0.15s;
+    text-decoration: none;
+}
+
+.footer-icon {
+    width: 24px;
+    object-fit: cover;
+}

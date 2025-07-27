@@ -1,0 +1,254 @@
+/* src/static/css/positioning.css */
+
+
+/* z-index */
+
+
+.z-50 {
+    z-index: 50;
+}
+
+.z-45 {
+    z-index: 45;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+
+/* perspective */
+
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+
+/* hard-coded positions */
+
+
+.t-1\/2 {
+    top:50%;
+}
+
+.t-0 {
+    top: 0;
+}
+
+.-top-16 {
+    top: -16px;
+}
+
+.-top-50 {
+    top: -50px;
+}
+
+.l-8 {
+    left: 2rem;
+}
+
+.l-0 {
+    left: 0;
+}
+
+.-l-16 {
+    left: -16px;
+}
+
+.-l-430 {
+    left: -430px;
+}
+
+.r-8 {
+    right: 8px;
+}
+
+.r-0 {
+    right: 0;
+}
+
+.-r-16 {
+    right: -16px;
+}
+
+.b-0 {
+    bottom: 0;
+}
+
+.-b-16 {
+    bottom: -16px;
+}
+
+.a-0 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+/* sizing */
+
+
+.w-1400 {
+    width: 1400px;
+}
+
+.w-32 {
+    width: 8rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-1000 {
+    height: 1000px;
+}
+
+.h-32 {
+    height: 8rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.h-fifth {
+    height: 20%;
+}
+
+.h-fourfifth {
+    height: 80%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+
+/* padding */
+
+.py-80 {
+    padding-top: 20rem;
+    padding-bottom: 20rem;
+}
+
+.py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.px-0 {
+    padding-left: 0rem;
+    padding-right: 0rem
+}
+
+.pl-24 {
+    padding-left: 6rem;
+}
+
+.pl-8 {
+    padding-left: 2rem;
+}
+
+.pt-10 {
+    padding-top: 2.5rem;
+}
+
+.p-40 {
+    padding: 10rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+/* margins */
+
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.space-x-32 > *:not(:first-child) {
+    margin-left: 8rem;
+}
+
+.space-x-16 > *:not(:first-child) {
+    margin-left: 4rem;
+}
+
+.space-x-4 > *:not(:first-child) {
+    margin-left: 1rem;
+}
+
+.space-x-0 > *:not(:first-child) {
+    margin-left: 0rem;
+}
+
+.ml-24 {
+    margin-left: 6rem;
+}
+
+.mr-16 {
+    margin-right: 4rem;
+}
+
+.space-y-16 > *:not(:first-child) {
+    margin-top: 4rem;
+}
+
+.space-y-4 > *:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.mt-16 {
+    margin-top: 4rem;
+}
+
+.mt-24 {
+    margin-top: 6rem;
+}
+
+.mb-16 {
+    margin-bottom: 4rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}

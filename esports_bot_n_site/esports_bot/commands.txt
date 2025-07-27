@@ -1,0 +1,29 @@
+Commands needed:
+
+Membership validation (email and questionaire)
+- Need email, name, Discord username, and class year
+
+Officership pictures
+
+
+
+
+Create teams (title logo and school logo)
+Edit teams
+Delete teams
+
+Register teams for season
+Remove teams
+Edit teams
+
+Set rosters
+Edit rosters (Remove from roster)
+Roster pictures
+
+Create news
+Edit news
+Remove news
+
+Schedule matches
+Edit matches (reschedule)
+Remove matches (either automatically or with an "end season" button)

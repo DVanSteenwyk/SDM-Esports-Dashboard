@@ -1,0 +1,36 @@
+/* Body */
+
+.row {
+    display: -webkit-flex;
+    display: flex;
+    padding-top: 10px;
+}
+
+.column {
+    padding: 10px;
+}
+
+.column.side {
+    -webkit-flex: 0.5;
+    -ms-flex: 0.5;
+    flex: 0.5;
+}
+
+.column.middle {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+}
+
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
